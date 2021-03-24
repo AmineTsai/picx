@@ -53,7 +53,7 @@ export default defineComponent({
 
       switch (type) {
         case ExternalLinkType.gh:
-
+          
           if (props.imgObj.is_transform_md) {
             externalLink = props.imgObj.md_gh_url
             successInfo = 'Markdown 格式的 GitHub'

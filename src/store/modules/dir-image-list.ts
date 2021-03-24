@@ -17,6 +17,7 @@ export default {
   actions: {
     // 图床管理 - 增加图片
     DIR_IMAGE_LIST_ADD_IMAGE(store: Store<any>, item: any) {
+      console.log("增加图片")
       const temp = store.state.dirImageList.find((v: any) => v.dir === item.dir)
       if (temp) {
         temp.imageList.push(item)
@@ -26,6 +27,7 @@ export default {
 
     // 图床管理 - 往指定目录增加图片列表
     DIR_IMAGE_LIST_ADD_IMAGE_LIST(store: Store<any>, dirImageItem: any) {
+      console.log("往指定目录增加图片列表")
       const temp = store.state.dirImageList.find((v: any) => v.dir === dirImageItem.dir)
       if (temp) {
         temp.imageList = dirImageItem.imageList

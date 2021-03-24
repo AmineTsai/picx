@@ -258,6 +258,9 @@ export default defineComponent({
         img.uploadStatus.uploading = false
 
         // 生成外链
+        console.log(res);
+        
+        console.log(ExternalLinkType.gh, res.data.content, userConfigInfo)
         img.externalLink.github = generateExternalLink(ExternalLinkType.gh, res.data.content, userConfigInfo)
         img.externalLink.cdn = generateExternalLink(ExternalLinkType.cdn, res.data.content, userConfigInfo)
         img.externalLink.markdown_gh = generateExternalLink(ExternalLinkType.md_gh, res.data.content, userConfigInfo)

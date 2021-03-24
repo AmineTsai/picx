@@ -55,8 +55,10 @@ import { useRouter } from 'vue-router'
 import getUuid from '../common/utils/getUuid'
 import axios from '../common/utils/axios/index'
 import { UserConfigInfoModel } from '../common/model/userConfigInfo.model'
+import { ExternalLinkType } from '../common/model/externalLink.model'
 import ImageCard from '../components/image-card.vue'
 import selectedInfoBar from '../components/selected-info-bar.vue'
+
 
 export default defineComponent({
   name: 'Management',
@@ -185,10 +187,10 @@ export default defineComponent({
             name: item.name,
             path: item.path,
             sha: item.sha,
-            github_url: generateExternalLink('github', item, this.userConfigInfo),
-            cdn_url: generateExternalLink('cdn', item, this.userConfigInfo),
-            markdown_gh: generateExternalLink('markdown_gh', item, this.userConfigInfo),
-            markdown_cdn: generateExternalLink('markdown_cdn', item, this.userConfigInfo),
+            github_url: generateExternalLink(ExternalLinkType.gh, item, this.userConfigInfo),
+            cdn_url: generateExternalLink(ExternalLinkType.cdn, item, this.userConfigInfo),
+            markdown_gh: generateExternalLink(ExternalLinkType.md_gh, item, this.userConfigInfo),
+            markdown_cdn: generateExternalLink(ExternalLinkType.md_cdn, item, this.userConfigInfo),
             deleting: false,
           }
         }

@@ -9,7 +9,8 @@ export default class TimeHelper {
     const yyyy = _now.getFullYear()
     const MM = _now.getMonth() + 1
     const DD = _now.getDate()
-    return `${yyyy}${this.zerofill(MM)}${this.zerofill(DD)}`
+    // return `${yyyy}${this.zerofill(MM)}${this.zerofill(DD)}`
+    return `${yyyy}`
   }
 
   static formatTimestamp(now: number = Date.now()) {
